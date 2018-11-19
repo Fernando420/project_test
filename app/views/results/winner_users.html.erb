@@ -1,0 +1,77 @@
+<div class="body_color">
+  <div class="container">
+    <div class="card person-card">
+      <div class="card-body">
+        <!-- Sex image -->
+        <% if @results_winner[:stars_user1] > @results_winner[:stars_user2] %>
+          <img id="img_sex" class="person-img" src="<%= @results_winner[:avatar_user1] %>">
+          <h2 id="winner_user" class="card-title">Winner <%= @results_winner[:name_user1] %></h2>
+          <h3 id="winner_user" class="card-title">Stars <i class="glyphicon glyphicon-star"></i> <%= @results_winner[:stars_user1] %></h3>
+        <% else %>
+          <img id="img_sex" class="person-img" src="<%= @results_winner[:avatar_user2] %>">
+          <h2 id="winner_user" class="card-title">Winner <%= @results_winner[:name_user2] %></h2>
+          <h3 id="winner_user" class="card-title">Stars <i class="glyphicon glyphicon-star"></i> <%= @results_winner[:stars_user2] %></h3>
+      <% end %>
+        <!-- First row (on medium screen) -->
+        <div class="row">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6" style="padding: 0.5em;">
+        <div class="card">
+          <div class="card-body">
+            <h2 align="center" class="card-title"><%= @results_winner[:name_user1] %></h2>
+            <table id="datatable" class="table table-striped">
+              <thead class="thead-blue">
+              <tr>
+                <th class="font-white">Name Repo</th>
+                <th class="font-white">Stars Repo</th>
+              </tr>
+              </thead>
+
+              <tbody>
+
+              <% @results_winner[:response1].each do |repo| %>
+                <tr>
+                  <td><%= repo[:name] %></td>
+                  <td><%= repo[:stars] %></td>
+                </tr>
+              <% end %>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 align="center" class="card-title"><%= @results_winner[:name_user2] %></h2>
+            <table id="datatable1" class="table-responsive table table-striped">
+              <thead class="thead-blue">
+              <tr>
+                <th class="font-white">Name Repo</th>
+                <th class="font-white">Stars Repo</th>
+              </tr>
+              </thead>
+
+              <tbody>
+
+              <% @results_winner[:response2].each do |repo| %>
+                <tr>
+                  <td><%= repo[:name] %></td>
+                  <td><%= repo[:stars] %></td>
+                </tr>
+              <% end %>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

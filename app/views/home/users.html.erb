@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <a href="#" class="active" id="users1">User 1</a>
+            </div>
+            <div class="col-xs-6">
+              <a href="#" id="users2">User 2</a>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div id="user1" style="display: block;">
+                <div align="center" class="col-lg-3 col-md-3 col-sm-3">
+                  <img src="<%= @user1["avatar_url"] %>" alt="user1" class="img-circle" width="100" height="100">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <ul>
+                    <li>
+                      <labe>ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp <%= @user1["id"] %></labe>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <labe>User: &nbsp <%= @user1["login"] %></labe>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="user2" style="display: none;">
+                <div align="center" class="col-lg-3 col-md-3 col-sm-3">
+                  <img src="<%= @user2["avatar_url"] %>" alt="user1" class="img-circle" width="100" height="100">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <ul>
+                    <li>
+                      <labe>ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp <%= @user2["id"] %></labe>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <labe>User: &nbsp <%= @user2["login"] %></labe>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div align="center" class="col-lg-12 col-md-12 col-sm-12">
+              <%= link_to "Winner?", winner_users_results_path(user1: @user1["login"], user2: @user2["login"]), :class => "btn btn-primary btn-lg", data: {disable_with: "Processing..."} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <h4 align="center">Enter names of github users</h4>
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= form_for :home, url: users_path do |f| %>
+                <div class="form-group">
+                  <%= f.text_field :name1, autofocus: true, :class => "form-control", :placeholder => "Name user 1", required: true%>
+                </div>
+                <div class="form-group">
+                  <%= f.text_field :name2, autofocus: true, :class => "form-control", :placeholder => "Name user 1", required: true%>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <%= f.submit "Start!", class: "form-control btn btn-login", data: {disable_with: "Processing..."} %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
