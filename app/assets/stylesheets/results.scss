@@ -1,0 +1,38 @@
+// Place all the styles related to the Results controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "dataTables.bootstrap4.min";
+
+.body_color {
+  background-color: #e9ebee;
+}
+
+.card {
+  margin-top: 1em;
+}
+
+/* IMG displaying */
+.person-card {
+  margin-top: 5em;
+  padding-top: 5em;
+}
+
+.person-card .card-title {
+  text-align: center;
+}
+
+.person-card .person-img {
+  width: 10em;
+  position: absolute;
+  top: 6em;
+  left: 50%;
+  margin-left: -5em;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.card-body {
+
+  margin-right: 4%;
+}
